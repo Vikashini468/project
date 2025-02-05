@@ -26,7 +26,7 @@ class Database:
         cur.execute(query)
         users=cur.fetchall()
         return users
-        def deleteStudent(self,id):
+    def deleteStudent(self,id):
         cur=self.conn.cursor()
         query="delete from student where id=%s"
         values=(id,)
