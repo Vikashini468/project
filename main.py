@@ -40,6 +40,11 @@ def signup():
         db=Database()
         db.addStudent(id,name,dept,year,email,password)
         return '<script>alert("signup Successfully....!");location.href="/login";</script>'
+@app.route("/delete/<int:id>",methods=["POST"])
+def delete(id):
+    db=Database()
+    db.deleteStudent(id)
+    return '<script>alert("Record deleted Successfully....!");location.href="/home";</script>'
 
 if __name__ == '__main__':
     app.run(debug=True,host="0.0.0.0",port=80)
